@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerConsultMinute">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="1280.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label layoutX="33.0" layoutY="14.0" text="SGP-CA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="1024.0" layoutY="28.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUser" layoutX="1024.0" layoutY="12.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="978.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="133.0" layoutY="112.0" prefHeight="681.0" prefWidth="1144.0" stylesheets="@ScrollPaneCss.css">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1701.0" prefWidth="889.0" style="-fx-background-color: F2F2FD;">
+               <children>
+                  <Label layoutX="16.0" layoutY="463.0" text="Pre-requisitos" />
+                  <TableView fx:id="tableViewAssistant" layoutX="10.0" layoutY="244.0" prefHeight="203.0" prefWidth="661.0" styleClass="table-View" stylesheets="@tableViewCss.css">
+                    <columns>
+                      <TableColumn fx:id="tableColumnMember" prefWidth="391.0" sortable="false" text="Integrante de CA" />
+                      <TableColumn fx:id="tableColumnRol" prefWidth="262.0" text="Rol" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tableViewPreRequisite" layoutX="15.0" layoutY="489.0" prefHeight="203.0" prefWidth="660.0" styleClass="table-View" stylesheets="@tableViewCss.css">
+                     <columns>
+                        <TableColumn fx:id="tableColumnDescription" prefWidth="386.0" text="Descripción" />
+                        <TableColumn fx:id="tableColumnManagerPrerequisite" prefWidth="269.0" text="Quien" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="tableViewDiscussion" layoutX="14.0" layoutY="735.0" prefHeight="203.0" prefWidth="863.0" styleClass="table-View" stylesheets="@tableViewCss.css">
+                     <columns>
+                        <TableColumn fx:id="tableColumnStartHour" prefWidth="77.0" text="Hora inicio" />
+                        <TableColumn fx:id="tableColumnEndHour" prefWidth="68.0" text="Hora fin" />
+                        <TableColumn fx:id="tableColumnEstimatedTime" prefWidth="103.0" text="Tiempo estimado" />
+                        <TableColumn fx:id="tableColumnNumberDiscussion" prefWidth="34.0" text="No" />
+                        <TableColumn fx:id="tableColumnPointToDiscuss" prefWidth="331.0" text="Punto a tratar" />
+                        <TableColumn fx:id="tableColumnLeader" prefWidth="229.0" text="Lider" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="tableViewAgreement" layoutX="15.0" layoutY="997.0" prefHeight="203.0" prefWidth="659.0" styleClass="table-View" stylesheets="@tableViewCss.css">
+                     <columns>
+                        <TableColumn fx:id="tableColumnNumberAgreement" prefWidth="46.0" text="No" />
+                        <TableColumn fx:id="tableColumnAgreement" prefWidth="375.0" text="Acuerdo" />
+                        <TableColumn fx:id="tableColumnManagerAgreement" prefWidth="92.0" text="Quién" />
+                        <TableColumn fx:id="tableColumnDate" prefWidth="134.0" text="Cuándo" />
+                     </columns>
+                  </TableView>
+                  <JFXTextArea fx:id="textAreaNote" layoutX="15.0" layoutY="1240.0" prefHeight="175.0" prefWidth="661.0" />
+                  <JFXTextArea fx:id="textAreaPending" layoutX="14.0" layoutY="1467.0" prefHeight="175.0" prefWidth="661.0" />
+                  <Label layoutX="16.0" layoutY="217.0" text="Asistentes" />
+                  <Label layoutX="16.0" layoutY="708.0" text="Agenda" />
+                  <Label layoutX="16.0" layoutY="959.0" text="Acuerdos" />
+                  <AnchorPane layoutX="18.0" layoutY="250.0" prefHeight="201.0" prefWidth="638.0" />
+                  <AnchorPane layoutX="21.0" layoutY="492.0" prefHeight="194.0" prefWidth="636.0" />
+                  <AnchorPane layoutX="25.0" layoutY="737.0" prefHeight="197.0" prefWidth="833.0" />
+                  <AnchorPane layoutX="14.0" layoutY="1000.0" prefHeight="197.0" prefWidth="646.0" />
+                  <JFXTextField fx:id="textFieldMeetingDate" editable="false" focusColor="#28eaff" labelFloat="true" layoutX="15.0" layoutY="14.0" promptText="Fecha de la reunión">
+                     <unFocusColor>
+                        <LinearGradient endX="0.6666666666666666" endY="0.5476190476190477">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                  </JFXTextField>
+                  <JFXTextField fx:id="textFieldProyectName" editable="false" focusColor="#28eaff" labelFloat="true" layoutX="15.0" layoutY="54.0" promptText="Nombre del proyecto">
+                     <unFocusColor>
+                        <LinearGradient endX="0.6666666666666666" endY="0.5476190476190477">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.016325535252690315" green="0.08842998743057251" blue="0.8815789222717285" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.15740740299224854" green="0.9157407283782959" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                  </JFXTextField>
+                  <JFXTextField fx:id="textFieldPlace" editable="false" focusColor="#28eaff" labelFloat="true" layoutX="15.0" layoutY="101.0" promptText="Lugar de la reunión">
+                     <unFocusColor>
+                        <LinearGradient endX="0.6666666666666666" endY="0.5476190476190477">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.016325535252690315" green="0.08842998743057251" blue="0.8815789222717285" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.15740740299224854" green="0.9157407283782959" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                  </JFXTextField>
+                  <JFXTextField fx:id="textFieldAffair" editable="false" focusColor="#28eaff" labelFloat="true" layoutX="15.0" layoutY="148.0" prefHeight="25.0" prefWidth="650.0" promptText="Asunto">
+                     <unFocusColor>
+                        <LinearGradient endX="0.6666666666666666" endY="0.5476190476190477">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.016325535252690315" green="0.08842998743057251" blue="0.8815789222717285" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.15740740299224854" green="0.9157407283782959" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <JFXButton fx:id="buttonDownload" buttonType="RAISED" layoutX="23.0" layoutY="634.0" onAction="#downloadMinuteOnAction" prefHeight="30.0" prefWidth="85.0" styleClass="Button" stylesheets="@StyleButton.css" text="Descargar" />
+      <JFXButton fx:id="buttonExit" buttonType="RAISED" layoutX="23.0" layoutY="698.0" onAction="#getOutOfConsultMinuteOnAction" prefHeight="30.0" prefWidth="85.0" styleClass="Button" stylesheets="@StyleButton.css" text="Salir" />
+      <AnchorPane layoutY="55.0" prefHeight="55.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;">
+         <effect>
+            <DropShadow height="9.5" offsetY="2.0" radius="1.875" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <JFXCheckBox fx:id="checkBoxApprove" layoutX="1041.0" layoutY="18.0" text="Aprobada" />
+            <Label layoutX="103.0" text="MINUTA">
+               <font>
+                  <Font name="System Bold" size="37.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="buttonModifyMinute" layoutX="1158.0" layoutY="15.0" onAction="#openModifyMinuteGuiOnAction" prefHeight="25.0" prefWidth="78.0" styleClass="Button" stylesheets="@StyleButton.css" text="Editar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1010.0" layoutY="112.0" prefHeight="681.0" prefWidth="253.0" style="-fx-background-color: F2F2FD;">
+         <children>
+            <TableView fx:id="tableViewApproved" layoutX="32.0" layoutY="16.0" prefHeight="653.0" prefWidth="209.0" styleClass="table-View" stylesheets="@TableViewInvitedConfirmed.css">
+              <columns>
+                <TableColumn fx:id="tableColumnMemberApproved" prefWidth="206.0" text="Aprobado por" />
+              </columns>
+            </TableView>
+            <AnchorPane layoutX="28.0" layoutY="17.0" prefHeight="645.0" prefWidth="187.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
