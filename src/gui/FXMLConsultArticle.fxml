@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" prefHeight="640.0" prefWidth="853.0" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-border-width: 1;" stylesheets="@StyleLateralMenu.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerConsultArticle">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label layoutX="14.0" layoutY="12.0" text="SGP-CA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="563.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelLoggedInUser" layoutX="608.0" layoutY="10.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="608.0" layoutY="29.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="55.0" prefHeight="28.0" prefWidth="850.0" style="-fx-background-color: white;" text="ARTÍCULO">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+         <effect>
+            <DropShadow height="9.52" offsetY="2.0" radius="1.88" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <JFXButton fx:id="buttonConsultArticleExit" layoutX="37.0" layoutY="582.0" onAction="#showGuiExitQueryArticle" prefHeight="30.0" prefWidth="89.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="SALIR">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="423.0" layoutY="124.0" text="Categoria:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="buttonModifyArticle" layoutX="704.0" layoutY="119.0" prefHeight="30.0" prefWidth="110.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="MODIFICAR" visible="false">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="76.0" layoutY="174.0" prefHeight="20.0" prefWidth="120.0" text="Impacto en el CA:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="25.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/impact.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="textFieldArticleImpact" editable="false" layoutX="199.0" layoutY="171.0" prefHeight="26.0" prefWidth="175.0" />
+      <AnchorPane fx:id="anchoPanerArticle" layoutX="37.0" layoutY="282.0" prefHeight="272.0" prefWidth="778.0" style="-fx-background-color: #F2F2FD; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="19.04" offsetY="2.0" radius="4.26" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <Label layoutX="134.0" layoutY="28.0" text="Autor:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleAuthor" editable="false" layoutX="184.0" layoutY="25.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="31.0" layoutY="93.0" text="Fecha: de publicación:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleMegazineName" editable="false" layoutX="184.0" layoutY="154.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="65.0" layoutY="157.0" text="Titulo de revista:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleEndPage" editable="false" layoutX="536.0" layoutY="95.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="446.0" layoutY="98.0" text="Página final:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="dataPickerArticlePublicationDate" layoutX="184.0" layoutY="89.0" prefWidth="210.0" />
+            <Label layoutX="495.0" layoutY="159.0" text="País:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleCountry" layoutX="536.0" layoutY="156.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="463.0" layoutY="28.0" text="Volumen:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleVolumen" editable="false" layoutX="535.0" layoutY="25.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="490.0" layoutY="219.0" text="ISSN:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleIssn" editable="false" layoutX="533.0" layoutY="216.0" prefHeight="26.0" prefWidth="210.0" />
+            <Label layoutX="65.0" layoutY="218.0" text="Correo del autor:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldArticleAuthorMail" editable="false" layoutX="184.0" layoutY="215.0" prefHeight="26.0" prefWidth="210.0" />
+            <AnchorPane layoutX="188.0" layoutY="84.0" prefHeight="51.0" prefWidth="210.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="441.0" layoutY="174.0" text="Estado:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelAsociatedProject" layoutX="64.0" layoutY="232.0" text="Proyecto Asociado:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="122.0" prefHeight="20.0" prefWidth="48.0" text="Titulo:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="textFieldArticleTitle" editable="false" layoutX="198.0" layoutY="119.0" prefHeight="26.0" prefWidth="175.0" />
+      <JFXTextField fx:id="textFieldArticleProject" editable="false" layoutX="198.0" layoutY="229.0" prefHeight="26.0" prefWidth="175.0" />
+      <JFXTextField fx:id="textFieldArticleCategory" editable="false" layoutX="499.0" layoutY="122.0" prefHeight="26.0" prefWidth="175.0" />
+      <JFXTextField fx:id="textFieldArticleStatus" editable="false" layoutX="497.0" layoutY="171.0" prefHeight="26.0" prefWidth="175.0" />
+      <JFXButton fx:id="buttonDeleteArticle" layoutX="704.0" layoutY="169.0" onAction="#showGuiAuthenticatePassword" prefHeight="30.0" prefWidth="110.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="ELIMINAR">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="labelIdEvidence" layoutX="726.0" layoutY="617.0" prefHeight="18.0" prefWidth="110.0" visible="false" />
+      <AnchorPane fx:id="anchorPaneBlackAuthenticate" layoutX="1.0" layoutY="-2.0" prefHeight="640.0" prefWidth="860.0" style="-fx-background-color: black; -fx-opacity: 0.5;" visible="false" />
+      <AnchorPane fx:id="anchorPaneAuthenticate" layoutX="261.0" layoutY="231.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="390.0" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;" visible="false">
+         <children>
+            <Label layoutX="27.0" layoutY="49.0" text="Escriba nuevamente su contraseña de acceso:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="14.0" prefHeight="23.0" prefWidth="390.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" text="AUTENTICACIÓN">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="buttonAuthenticateContinue" layoutX="64.0" layoutY="148.0" onAction="#authenticatePassword" prefWidth="90.0" styleClass="Button" stylesheets="@StyleButton.css" text="CONTINUAR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="buttonAuthenticateCancel" layoutX="237.0" layoutY="147.0" onAction="#cancelAuthenticationToDeleteEvidence" prefHeight="26.0" prefWidth="90.0" styleClass="Button" stylesheets="@StyleButton.css" text="CANCELAR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXPasswordField fx:id="passwordFieldPassword" layoutX="27.0" layoutY="81.0" prefHeight="26.0" prefWidth="334.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

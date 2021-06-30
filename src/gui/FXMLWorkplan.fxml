@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" prefHeight="705.0" prefWidth="845.0" style="-fx-background-color: #d1d1d1;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerWorkplan">
+   <children>
+      <AnchorPane fx:id="anchorPaneMainWorplan" layoutX="52.0" layoutY="49.0" prefHeight="655.0" prefWidth="795.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="40.0" layoutY="101.0" prefHeight="99.0" prefWidth="695.0" style="-fx-background-color: F2F2FD; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="47.0" layoutY="5.0" text="Cuerpo Académico (CA):">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="25.0" text="Grado de estudio:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="74.0" text="Cargo en el cuerpo académico:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAcademicGroup" layoutX="205.0" layoutY="6.0" prefHeight="18.0" prefWidth="480.0" />
+                  <Label fx:id="labelMemberName" layoutX="205.0" layoutY="26.0" prefHeight="18.0" prefWidth="480.0" />
+                  <Label fx:id="labelMemberPosition" layoutX="204.0" layoutY="75.0" prefHeight="1.0" prefWidth="482.0" />
+                  <Label layoutX="97.0" layoutY="49.0" text="Área de estudio:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelMemberEmail" layoutX="205.0" layoutY="50.0" prefHeight="18.0" prefWidth="482.0" />
+               </children>
+               <effect>
+                  <DropShadow height="4.27" offsetY="2.0" radius="0.5674999999999999" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="68.0" prefWidth="795.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="INICIO">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="130.0" layoutY="28.0" text="SGP-CA">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" layoutX="356.0" layoutY="16.0" prefHeight="35.0" prefWidth="55.0" text="PLAN ELEGIDO" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="comboBoxWorkplanNames" labelFloat="true" layoutX="420.0" layoutY="20.0" onAction="#selectComboBoxWorkplanKeycodes" prefHeight="26.0" prefWidth="232.0" promptText="Selecciona una opción" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXComboBox>
+                  <JFXButton fx:id="buttonManageWorkplan" layoutX="662.0" layoutY="15.0" onAction="#showGuiManageWorkplanSelected" prefHeight="35.0" prefWidth="118.0" ripplerFill="#4343a7" style="-fx-background-color: #B4B4FF; -fx-background-radius: 10;" styleClass="Button" stylesheets="@StyleButton.css" text="ADMINISTRAR">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow height="19.04" offsetY="2.0" radius="4.26" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="40.0" layoutY="221.0" prefHeight="436.0" prefWidth="695.0" style="-fx-background-color: F2F2FD; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="160.0" layoutY="18.0" text="OBJETIVOS PENDIENTES ">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableViewObjectives" layoutX="24.0" layoutY="74.0" prefHeight="361.0" prefWidth="646.0" styleClass="table-View" stylesheets="@StyleTableView.css">
+                    <columns>
+                      <TableColumn fx:id="tableColumnObjectiveNames" prefWidth="645.6000045776367" text="Titulo del Objetivo " />
+                    </columns>
+                  </TableView>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="486.0" layoutY="14.0" onMouseClicked="#clearTableSelection" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/update.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="buttonArchievedObjectives" layoutX="687.0" layoutY="177.0" onAction="#tableOfObjectivesArchieved" prefHeight="30.0" prefWidth="192.0" ripplerFill="#4343a7" rotate="-90.0" style="-fx-background-radius: 10; -fx-background-color: B4B4FF; -fx-border-radius: 10;" styleClass="Button" stylesheets="@StyleButton.css" text="OBJETIVOS CUMPLIDOS" AnchorPane.rightAnchor="-80.60000000000002">
+               <effect>
+                  <DropShadow height="9.52" offsetY="2.0" radius="1.88" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="42.0" layoutY="74.0" text="Usuario:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneManageWorkplan" layoutX="55.0" layoutY="51.0" prefHeight="655.0" prefWidth="795.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="-2.0" layoutY="-2.0" prefHeight="72.0" prefWidth="796.0" style="-fx-background-color: white;" text="ADMINISTRACIÓN DE PLAN DE TRABAJO">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow height="9.52" offsetY="2.0" radius="1.88" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <AnchorPane layoutX="52.0" layoutY="94.0" prefHeight="190.0" prefWidth="686.0" style="-fx-background-color: #F2F2FD; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="18.0" text="Clave de Plan de Trabajo:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="73.0" text="Fecha de inicio:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="96.0" layoutY="131.0" text="Fecha de fin:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="textFieldManagedWorkplanKeycode" layoutX="189.0" layoutY="15.0" prefHeight="26.0" prefWidth="482.0" />
+                  <JFXDatePicker fx:id="datePickerManagedWorkplanStartDate" layoutX="189.0" layoutY="70.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+                  <JFXDatePicker fx:id="datePickerManagedWorkplanFinishDate" layoutX="189.0" layoutY="128.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+               </children>
+               <effect>
+                  <DropShadow height="19.04" offsetY="2.0" radius="4.26" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <TableView fx:id="tableViewAllObjectives" layoutX="52.0" layoutY="361.0" prefHeight="199.0" prefWidth="690.0" styleClass="table-View" stylesheets="@StyleTableView.css">
+              <columns>
+                <TableColumn fx:id="tableColumnAllObjectiveTitles" prefWidth="400.79998779296875" text="Titulo " />
+                  <TableColumn fx:id="tableColumnAllObjectiveStatus" prefWidth="166.4000244140625" text="Estado" />
+                  <TableColumn fx:id="tableColumnAllObjectiveModify" editable="false" prefWidth="124.00006103515625" resizable="false" sortable="false" text="Modificar" />
+              </columns>
+            </TableView>
+            <Label fx:id="labelFirtsWorkplanKeycode" layoutX="3.0" layoutY="636.0" prefHeight="18.0" prefWidth="218.0" />
+            <ImageView fitHeight="47.0" fitWidth="55.0" layoutX="690.0" layoutY="300.0" onMousePressed="#refreshTableOfAllObjectives" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/update.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <JFXButton layoutX="51.0" layoutY="307.0" onAction="#showGuiAddNewObjective" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="AGREGAR OBJETIVO">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="521.0" layoutY="593.0" onAction="#saveWorkplanAdministration" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="GUARDAR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="647.0" layoutY="593.0" onAction="#exitWorkplanManage" prefHeight="30.0" prefWidth="89.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="SALIR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-4.0" prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: black;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label layoutX="14.0" layoutY="12.0" text="SGP-CA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="563.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelLoggedInUser" layoutX="608.0" layoutY="10.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="608.0" layoutY="29.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneWhiteWorkplan" prefHeight="707.0" prefWidth="850.0" style="-fx-background-color: #000000;" visible="false" />
+      <AnchorPane layoutX="-1.0" layoutY="51.0" prefHeight="656.0" prefWidth="55.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fx:id="imagenViewMainLateralMenu" fitHeight="48.0" fitWidth="48.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lateralMenu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneLateralMenu" layoutX="53.0" layoutY="51.0" prefHeight="655.0" prefWidth="294.0" style="-fx-background-color: #000000;">
+         <children>
+            <VBox layoutX="3.0" layoutY="76.0" prefHeight="580.0" prefWidth="294.0" style="-fx-background-color: #000000;">
+               <children>
+                  <JFXButton fx:id="buttonMenuCurriculumGeneral" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="447.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="CURRÍCULUM GENERAL" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuCurriculumPersonal" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="526.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="CURRÍCULUM PERSONAL" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuEventos" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="373.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="EVENTOS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuProduccion" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="566.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="PRODUCCIÓN" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuReuniones" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="492.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="REUNIONES" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuProyectos" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="558.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="PROYECTOS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMenuExit" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="558.0" styleClass="lateralMenuButton" stylesheets="@StyleLateralMenu.css" text="SALIR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Line endX="48.19999694824219" endY="59.400001525878906" startX="218.60003662109375" startY="59.400001525878906" stroke="WHITE" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" layoutY="14.0" prefHeight="39.0" prefWidth="297.0" text="OPCIONES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <ImageView fx:id="imagenViewMainBackLateralMenu" fitHeight="48.0" fitWidth="48.0" layoutX="243.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lateralMenu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneArchievedObjectives" layoutX="531.0" layoutY="145.0" prefHeight="560.0" prefWidth="319.0">
+         <children>
+            <JFXButton fx:id="buttonBackArchievedObjectives" layoutX="-79.0" layoutY="81.0" prefHeight="30.0" prefWidth="192.0" ripplerFill="#4343a7" rotate="-90.0" style="-fx-background-radius: 10; -fx-background-color: B4B4FF; -fx-border-radius: 10;" styleClass="Button" stylesheets="@StyleButton.css" text="OBJETIVOS CUMPLIDOS">
+               <effect>
+                  <DropShadow height="9.52" offsetY="2.0" radius="1.88" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TableView fx:id="tableViewArchievedObjectives" layoutX="32.0" prefHeight="560.0" prefWidth="287.0" styleClass="table-View" stylesheets="@StyleTableView.css">
+              <columns>
+                <TableColumn fx:id="tableColumnArchievedTitleObjectives" prefWidth="75.0" text="Titulo" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneBlackWorkplan" prefHeight="707.0" prefWidth="850.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;" visible="false" />
+      <AnchorPane fx:id="anchorPanelAddWorkplan" layoutX="230.0" layoutY="206.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="390.0" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;" visible="false">
+         <children>
+            <Label layoutX="27.0" layoutY="49.0" text="Clave del Plan de Trabajo:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="14.0" prefHeight="23.0" prefWidth="390.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" text="NUEVO PLAN DE TRABAJO">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="137.0" text="Fecha de inicio:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="200.0" layoutY="136.0" text="Fecha de fin:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldAddWorkplanKeycode" layoutX="28.0" layoutY="69.0" prefHeight="26.0" prefWidth="333.0" unFocusColor="BLACK" />
+            <JFXDatePicker fx:id="datePickerAddWorkplanEndDate" layoutX="200.0" layoutY="157.0" prefHeight="28.0" prefWidth="159.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXDatePicker>
+            <JFXDatePicker fx:id="datePickerAddWorkplanStartDate" layoutX="25.0" layoutY="157.0" prefHeight="28.0" prefWidth="159.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXDatePicker>
+            <JFXButton layoutX="66.0" layoutY="241.0" onAction="#saveNewWorkplan" prefWidth="90.0" styleClass="Button" stylesheets="@StyleButton.css" text="CONTINUAR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="235.0" layoutY="240.0" onAction="#buttonCancelAddWorkplan" prefHeight="26.0" prefWidth="90.0" styleClass="Button" stylesheets="@StyleButton.css" text="CANCELAR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneModifyObjective" layoutX="43.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="644.0" prefWidth="757.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" visible="false">
+         <children>
+            <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="30.0" prefWidth="755.0" style="-fx-background-color: White; -fx-background-radius: 10 10 0 0; -fx-border-radius: 20;">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Objetivo de: ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelWorkplanKeycode" layoutX="101.0" layoutY="6.0" prefHeight="19.0" prefWidth="600.0" textFill="#216ada">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="5.0" offsetY="3.0" radius="0.75" spread="0.52" width="0.0">
+                     <color>
+                        <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <TableView fx:id="tableViewModifyStrategy" editable="true" layoutX="33.0" layoutY="412.0" prefHeight="146.0" prefWidth="688.0" styleClass="table-View" stylesheets="@StyleTableView.css">
+               <columns>
+                  <TableColumn fx:id="tableColumnModifyStrategyNumber" editable="false" minWidth="-1.0" prefWidth="57.5999755859375" resizable="false" text="No." />
+                  <TableColumn fx:id="tableColumnModifyStrategyDescription" editable="false" minWidth="-1.0" prefWidth="165.6000213623047" sortable="false" text="Estrategia" />
+                  <TableColumn fx:id="tableColumnModifyStrategyGoal" editable="false" minWidth="-1.0" prefWidth="104.80001831054688" sortable="false" text="Meta" />
+                  <TableColumn fx:id="tableColumnModifyStrategyAction" editable="false" minWidth="-1.0" prefWidth="140.39999389648438" sortable="false" text="Acción" />
+                  <TableColumn fx:id="tableColumnModifyStrategyResult" editable="false" minWidth="-1.0" prefWidth="108.0001220703125" sortable="false" text="Resultado" />
+                  <TableColumn fx:id="tableColumnModifyStrategyDelete" editable="false" prefWidth="110.39990234375" sortable="false" text="Eliminar" />
+               </columns>
+            </TableView>
+            <AnchorPane layoutX="1.0" layoutY="30.0" prefHeight="126.0" prefWidth="695.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="84.0" text="Descripción:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea fx:id="textAreaModifyObjectiveDescription" focusColor="BLACK" layoutX="127.0" layoutY="80.0" prefHeight="66.0" prefWidth="596.0" unFocusColor="BLACK" wrapText="true" />
+                  <Label layoutX="73.0" layoutY="21.0" text="Titulo:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="textFieldModifyObjectiveTitle" layoutX="124.0" layoutY="18.0" prefHeight="26.0" prefWidth="600.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="34.0" layoutY="208.0" text="Estrategias">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXRadioButton fx:id="radioButtonStatusPending" layoutX="639.0" layoutY="373.0" text="Pendiente">
+               <toggleGroup>
+                  <ToggleGroup fx:id="objectiveStatus" />
+               </toggleGroup>
+               <selectedColor>
+                  <Color green="0.5882353186607361" blue="0.5333333611488342" />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioButtonStatusArchieved" layoutX="529.0" layoutY="373.0" text="Cumplido" toggleGroup="$objectiveStatus">
+               <selectedColor>
+                  <Color green="0.5882353186607361" blue="0.5333333611488342" />
+               </selectedColor></JFXRadioButton>
+            <Label layoutX="529.0" layoutY="347.0" text="Estado:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="567.0" layoutY="238.0" prefHeight="19.0" prefWidth="155.0" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-radius: 0 10 0 0;" text="Resultado" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="255.0" layoutY="238.0" prefHeight="19.0" prefWidth="174.0" style="-fx-border-color: #EAEAEA; -fx-background-color: white;" text="Meta" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="427.0" layoutY="238.0" prefHeight="19.0" prefWidth="142.5" style="-fx-border-color: #EAEAEA; -fx-background-color: white;" text="Acción" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="textAreaAddStrategyGoal" layoutX="255.0" layoutY="254.0" prefHeight="65.0" prefWidth="172.5" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-width: 0 1 1 1;" unFocusColor="#ffffff00">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <JFXTextArea fx:id="textAreaAddStrategyAction" layoutX="427.0" layoutY="254.0" prefHeight="65.0" prefWidth="143.0" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-width: 0 1 1 1;" unFocusColor="#ffffff00">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <Label alignment="CENTER" layoutX="33.0" layoutY="238.0" prefHeight="19.0" prefWidth="71.0" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-radius: 10 0 0 0;" text="No." textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+            <JFXTextArea fx:id="textAreaAddStrategyNumber" layoutX="33.0" layoutY="254.0" prefHeight="65.0" prefWidth="71.0" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-width: 0 1 1 1; -fx-border-radius: 0 0 0 10;" unFocusColor="#ffffff00">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <JFXTextArea fx:id="textAreaAddStrategyResult" layoutX="569.0" layoutY="254.0" prefHeight="65.0" prefWidth="152.3" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-width: 0 1 1 1; -fx-border-radius: 0 0 10 0;" unFocusColor="#ffffff00">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <Label alignment="CENTER" layoutX="103.0" layoutY="238.0" prefHeight="19.0" prefWidth="152.5" style="-fx-border-color: #EAEAEA; -fx-background-color: white;" text="Descripción" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="textAreaAddStrategyDescription" layoutX="103.0" layoutY="254.0" prefHeight="65.0" prefWidth="152.5" style="-fx-border-color: #EAEAEA; -fx-background-color: white; -fx-border-width: 0 1 1 1;" unFocusColor="#ffffff00">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <JFXButton layoutX="32.0" layoutY="356.0" onAction="#addStrategiesToTheModifiedObjective" prefHeight="30.0" prefWidth="128.0" ripplerFill="#4059a9" styleClass="Button" stylesheets="@StyleButton.css" text="AGREGAR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="buttonSaveGuiAddNewStrategy" layoutX="477.0" layoutY="589.0" onAction="#saveModificationOfSelectedObjective" prefHeight="30.0" prefWidth="104.0" styleClass="Button" stylesheets="@StyleButton.css" text="GUARDAR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="buttonCloseGuiModifyObjective" layoutX="620.0" layoutY="589.0" onAction="#exitAddSelectedWorkplanObjective" prefHeight="30.0" prefWidth="104.0" styleClass="Button" stylesheets="@StyleButton.css" text="CERRAR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label fx:id="labelObjectiveId" layoutX="32.0" layoutY="611.0" prefHeight="18.0" prefWidth="124.0" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="255.0" radius="127.0" width="255.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
