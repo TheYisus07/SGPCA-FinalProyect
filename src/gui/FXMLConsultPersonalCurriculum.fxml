@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerConsultPersonalCurriculum">
+   <children>
+      <AnchorPane layoutY="13.0" prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: #000000;" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="31.0" layoutY="7.0" prefHeight="50.0" prefWidth="266.0" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Currículum del CA: Edición " textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="539.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelLoggedInUser" layoutX="584.0" layoutY="10.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="584.0" layoutY="29.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="40.0" layoutY="83.0" prefHeight="55.0" prefWidth="780.0" style="-fx-background-color: ffffff;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Label layoutX="20.0" layoutY="5.0" style="-fx-font-weight: bold; -fx-font-size: 35px;" text="DATOS CURRICULARES" />
+            <JFXButton fx:id="buttonEditMember" layoutX="688.0" layoutY="9.0" onAction="#showModifyMemberGuiOnAction" styleClass="Button" stylesheets="@StyleButton.css" text="EDITAR" />
+         </children>
+         <effect>
+            <DropShadow height="1.18" offsetY="2.0" radius="0.0" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="36.0" layoutY="151.0" prefHeight="492.0" prefWidth="790.0" style="-fx-background-color: F2F2FD;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Label layoutX="22.0" layoutY="34.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Nombre:" />
+            <Label layoutX="22.0" layoutY="74.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Fecha de nacimiento:" />
+            <Label layoutX="22.0" layoutY="109.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="CURP:" />
+            <Label layoutX="22.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Correo institucional:" />
+            <Label layoutX="344.0" layoutY="234.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Grado de estudios:" />
+            <Label layoutX="22.0" layoutY="149.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Número teléfonico:" />
+            <Label layoutX="23.0" layoutY="234.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Disciplina:" />
+            <Label layoutX="25.0" layoutY="398.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Código de CA:" />
+            <Label layoutX="23.0" layoutY="357.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="LGAC:" />
+            <Label layoutX="352.0" layoutY="357.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="IES:" />
+            <Label layoutX="23.0" layoutY="319.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Tipo de docencia:" />
+            <Label layoutX="353.0" layoutY="398.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Participación con PRODEP:" />
+            <Label layoutX="23.0" layoutY="279.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Área de estudios:" />
+            <Label layoutX="464.0" layoutY="3.0" style="-fx-font-weight: bold; -fx-font-size: 15px;" text="Cargo en CA:" />
+            <JFXTextField fx:id="textFieldPositionMember" editable="false" layoutX="564.0" layoutY="1.0" prefHeight="25.0" prefWidth="170.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldNameMember" editable="false" layoutX="94.0" layoutY="32.0" prefHeight="25.0" prefWidth="369.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldBirthOfDayMember" editable="false" layoutX="181.0" layoutY="72.0" prefHeight="25.0" prefWidth="122.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldCURPMember" editable="false" layoutX="86.0" layoutY="107.0" prefHeight="25.0" prefWidth="216.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldPhoneNumberMember" editable="false" layoutX="171.0" layoutY="147.0" prefHeight="25.0" prefWidth="132.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldInstitutionalMailMember" editable="false" layoutX="176.0" layoutY="188.0" prefHeight="25.0" prefWidth="292.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldDisciplineMember" editable="false" layoutX="103.0" layoutY="234.0" prefHeight="25.0" prefWidth="200.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldGradeOfStudyMember" editable="false" layoutX="483.0" layoutY="232.0" prefHeight="25.0" prefWidth="200.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldAreaOfStudyMember" editable="false" layoutX="160.0" layoutY="277.0" prefHeight="25.0" prefWidth="311.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldTypeOfTeachingMember" editable="false" layoutX="160.0" layoutY="317.0" prefHeight="25.0" prefWidth="149.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldLGACMember" editable="false" layoutX="73.0" layoutY="355.0" prefHeight="25.0" prefWidth="266.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldIESMember" editable="false" layoutX="389.0" layoutY="355.0" prefHeight="25.0" prefWidth="266.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldKeycodeMember" editable="false" layoutX="137.0" layoutY="396.0" prefHeight="25.0" prefWidth="178.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+            <JFXTextField fx:id="textFieldPRODEPMember" editable="false" layoutX="548.0" layoutY="396.0" prefHeight="25.0" prefWidth="115.0">
+               <unFocusColor>
+                  <LinearGradient endX="0.7904761904761904" endY="0.719047619047619">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.01568627543747425" green="0.09019608050584793" blue="0.8823529481887817" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.1568627506494522" green="0.9176470637321472" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="buttonExitMember" layoutX="30.0" layoutY="647.0" onAction="#exitConsultPersonalCurriculum" styleClass="Button" stylesheets="@StyleButton.css" text="Salir" />
+   </children>
+</AnchorPane>
