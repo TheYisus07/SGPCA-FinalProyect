@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerConsultEvent">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="850.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="623.0" layoutY="22.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUser" layoutX="623.0" layoutY="6.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="577.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane layoutX="46.0" layoutY="89.0" prefHeight="611.0" prefWidth="757.0" style="-fx-background-color: #ececf6;">
+         <children>
+            <Label fx:id="titleLabel" layoutX="237.0" layoutY="126.0" prefHeight="17.0" prefWidth="103.0" />
+            <Label layoutX="55.0" layoutY="126.0" text="Titulo del evento:" />
+            <Label layoutX="54.0" layoutY="158.0" text="Fecha de registro:" />
+            <Label fx:id="registrationDateLabel" layoutX="237.0" layoutY="158.0" />
+            <Label layoutX="54.0" layoutY="191.0" text="Fecha del evento:" />
+            <Label layoutX="55.0" layoutY="230.0" text="Lugar:" />
+            <Label layoutX="55.0" layoutY="267.0" text="Privacidad:" />
+            <Label layoutX="55.0" layoutY="301.0" text="Tipo:" />
+            <Label fx:id="eventDateLabel" layoutX="237.0" layoutY="191.0" />
+            <Label fx:id="placeLabel" layoutX="238.0" layoutY="230.0" />
+            <Label fx:id="privacityLabel" layoutX="238.0" layoutY="267.0" />
+            <Label fx:id="typeLabel" layoutX="238.0" layoutY="301.0" />
+            <Label layoutX="54.0" layoutY="348.0" text="Responsable:" />
+            <Label fx:id="responsableLabel" layoutX="238.0" layoutY="348.0" />
+            <Label layoutX="24.0" layoutY="20.0" text="EVENTO">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="modifyEventButton" layoutX="572.0" layoutY="27.0" mnemonicParsing="false" onAction="#showModifyEvenGUIOnAction" prefHeight="37.0" prefWidth="171.0" styleClass="Button" stylesheets="@StyleButton.css" text="MODIFICAR EVENTO">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="exitConsultEventButton" layoutX="6.0" layoutY="547.0" mnemonicParsing="false" onAction="#getOutOfConsultEventOnAction" prefHeight="37.0" prefWidth="103.0" styleClass="Button" stylesheets="@StyleButton.css" text="SALIR">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <AnchorPane layoutX="472.0" layoutY="520.0" prefHeight="46.0" prefWidth="235.0" style="-fx-background-color: #c9c9c9; -fx-border-color: #ffffff;">
+               <children>
+                  <Button fx:id="showConstancyListGUIButton" layoutX="16.0" layoutY="11.0" mnemonicParsing="false" onAction="#showConstancyListGUIOnAction" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: #000000;" text="Ver constancias del evento" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Label layoutX="567.0" layoutY="478.0" text="Constancias">
+               <font>
+                  <Font name="Bodoni MT" size="28.0" />
+               </font>
+            </Label>
+            <Line endX="566.0" layoutX="183.0" layoutY="81.0" startX="-175.0" />
+            <Line endX="566.0" layoutX="183.0" layoutY="469.0" startX="-175.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

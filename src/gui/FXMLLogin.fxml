@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneInicioSesion" prefHeight="708.0" prefWidth="803.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerLogin">
+   <children>
+      <Label layoutX="476.0" layoutY="206.0" text="Inicio de sesión">
+         <font>
+            <Font name="Yu Gothic Regular" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelInvalidFieldsLogin" alignment="CENTER" layoutX="456.0" layoutY="248.0" prefHeight="42.0" prefWidth="294.0" style="-fx-border-color: red; -fx-border-radius: 8;" text="Usuario o contraseña incorrectos" textFill="RED" visible="false" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="91.0" fitWidth="88.0" layoutX="465.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/sgpca.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="740.0" fitWidth="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/library.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="571.0" layoutY="132.0" prefHeight="64.0" prefWidth="163.0" text="SPG-CA" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Regular" size="43.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="textFieldLoginEmail" labelFloat="true" layoutX="455.0" layoutY="351.0" prefHeight="26.0" prefWidth="294.0" promptText="Correo institucional" />
+      <JFXPasswordField fx:id="passwordFieldLoginPassword" labelFloat="true" layoutX="456.0" layoutY="432.0" prefHeight="26.0" prefWidth="294.0" promptText="Contraseña">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXPasswordField>
+      <JFXButton buttonType="RAISED" layoutX="456.0" layoutY="511.0" onAction="#validateLoginFields" prefHeight="34.0" prefWidth="294.0" ripplerFill="#002ae8" style="-fx-background-color: #52bcff;" text="Iniciar sesión" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

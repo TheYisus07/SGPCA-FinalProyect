@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="701.0" prefWidth="865.0" style="-fx-background-color: #fff; -fx-border-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerScheduleMeeting">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="865.0" style="-fx-background-color: #000000; -fx-border-color: #000000;">
+         <children>
+            <Label layoutX="24.0" layoutY="18.0" text="SGP-CA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="614.0" layoutY="27.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUser" layoutX="614.0" layoutY="11.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="568.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutY="116.0" prefHeight="585.0" prefWidth="865.0" stylesheets="@ScrollPaneCss.css">
+         <content>
+            <AnchorPane prefHeight="1218.0" prefWidth="852.0" style="-fx-background-color: #ececf6;">
+               <children>
+                  <Label layoutX="423.0" layoutY="85.0" text="Fecha de la reunión:" />
+                  <Label layoutX="54.0" layoutY="48.0" text="Nombre del proyecto:" />
+                  <Label layoutX="51.0" layoutY="122.0" text="Lugar de la reunión:" />
+                  <Label layoutX="54.0" layoutY="185.0" text="Asunto:" />
+                  <BorderPane fx:id="borderPaneLeader" layoutX="120.0" layoutY="240.0" prefHeight="230.0" prefWidth="520.0">
+                     <center>
+                        <TableView fx:id="tableViewAssitantLeader" prefHeight="200.0" prefWidth="200.0" styleClass="table-View" stylesheets="@tableViewCss.css" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="tableColumnAssitantLeader" prefWidth="496.0" text="Lider" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="borderPaneTimeTaker" layoutX="120.0" layoutY="240.0" prefHeight="230.0" prefWidth="520.0" visible="false">
+                     <center>
+                        <TableView fx:id="tableViewAssitantTimeTaker" prefHeight="200.0" prefWidth="200.0" styleClass="table-View" stylesheets="@tableViewCss.css" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="tableColumnAssistantTimeTaker" prefWidth="491.0" text="Tomador de tiempo" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="borderPaneSecretary" layoutX="120.0" layoutY="240.0" prefHeight="230.0" prefWidth="520.0" visible="false">
+                     <center>
+                        <TableView fx:id="tableViewAssitantSecretary" prefHeight="200.0" prefWidth="200.0" styleClass="table-View" stylesheets="@tableViewCss.css" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="tableColumnAssitantSecretary" prefWidth="494.0" text="Secretario" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <BorderPane layoutX="177.0" layoutY="578.0" prefHeight="226.0" prefWidth="627.0">
+                     <center>
+                        <TableView fx:id="tableViewPrerequisites" prefHeight="200.0" prefWidth="200.0" styleClass="table-View" stylesheets="@tableViewCss.css" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="tableColumnPreRequisiteDescription" prefWidth="367.0" text="Descripción" />
+                            <TableColumn fx:id="tableColumnPreRequisiteManager" prefWidth="194.0" text="Quien" />
+                              <TableColumn fx:id="tableColumnButtonDeletePreRequisite" prefWidth="49.0" text="Eliminar" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <Button fx:id="buttonScheduleMeeting" layoutX="672.0" layoutY="105.0" mnemonicParsing="false" onAction="#scheduleMeetingOnAction" prefHeight="34.0" prefWidth="117.0" styleClass="Button" stylesheets="@StyleButton.css" text="AGENDAR" />
+                  <Button fx:id="buttonExitOfScheduleMeeting" layoutX="35.0" layoutY="494.0" mnemonicParsing="false" onAction="#getOutOnAction" prefHeight="34.0" prefWidth="97.0" styleClass="Button" stylesheets="@StyleButton.css" text="SALIR" />
+                  <BorderPane layoutX="43.0" layoutY="955.0" prefHeight="238.0" prefWidth="780.0">
+                     <center>
+                        <TableView fx:id="tableViewDiscussion" prefHeight="200.0" prefWidth="200.0" styleClass="table-View" stylesheets="@tableViewCss.css" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="tableColumnEstimatedTime" prefWidth="113.0" text="     Tiempo estimado" />
+                              <TableColumn fx:id="tableColumnNo" prefWidth="24.0" text="No" />
+                              <TableColumn fx:id="tableColumnPointToDiscuss" prefWidth="329.0" text="Punto a tratar" />
+                              <TableColumn fx:id="tableColumnDiscussionLeader" prefWidth="233.0" text="Lider de discusión" />
+                              <TableColumn fx:id="tableColumnDeleteDiscussion" prefWidth="68.0" text="Eliminar" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <JFXDatePicker fx:id="datePickerMeetingDate" layoutX="423.0" layoutY="108.0" prefHeight="28.0" prefWidth="238.0" />
+                  <JFXTextField fx:id="textFieldProyectName" layoutX="51.0" layoutY="73.0" prefHeight="25.0" prefWidth="279.0" />
+                  <JFXTextField fx:id="textFieldMeetingPlace" layoutX="51.0" layoutY="139.0" prefHeight="25.0" prefWidth="279.0" />
+                  <JFXTextField fx:id="textFieldMeetingAffair" layoutX="54.0" layoutY="202.0" prefHeight="25.0" prefWidth="758.0" />
+                  <AnchorPane layoutX="183.0" layoutY="518.0" prefHeight="44.0" prefWidth="541.0" style="-fx-background-color: #fff; -fx-background-radius: 30;">
+                     <children>
+                        <JFXTextField fx:id="textFieldResponsable" labelFloat="true" layoutX="317.0" layoutY="10.0" prefHeight="25.0" prefWidth="199.0" promptText="Quién" />
+                        <JFXTextArea fx:id="textAreaDescription" labelFloat="true" layoutX="26.0" layoutY="5.0" prefHeight="35.0" prefWidth="263.0" promptText="Descripción" />
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="buttonaddPreRequisite" layoutX="739.0" layoutY="527.0" onAction="#addPreRequisiteOnAction" prefHeight="27.0" prefWidth="75.0" style="-fx-border-color: #0A84FF; -fx-background-radius: 30; -fx-background-color: #ffffff; -fx-border-radius: 30;" text="AÑADIR" />
+                  <AnchorPane layoutX="33.0" layoutY="895.0" prefHeight="45.0" prefWidth="707.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+                     <children>
+                        <JFXTextField fx:id="textFieldEstimatedTime" labelFloat="true" layoutX="24.0" layoutY="10.0" prefHeight="25.0" prefWidth="96.0" promptText="Tiempo estimado" />
+                        <JFXTextField fx:id="textFieldPointToDiscuss" labelFloat="true" layoutX="169.0" layoutY="10.0" prefHeight="25.0" prefWidth="346.0" promptText="Punto a tratar" />
+                        <JFXTextField fx:id="textFieldDiscussionLeader" labelFloat="true" layoutX="535.0" layoutY="10.0" prefHeight="25.0" prefWidth="158.0" promptText="Lider de discusión" />
+                        <Label layoutX="136.0" layoutY="14.0" text="No" />
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="buttonAddDiscussion" layoutX="746.0" layoutY="904.0" onAction="#addDiscussionOnAction" prefHeight="27.0" prefWidth="66.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30; -fx-border-color: #0A84FF; -fx-border-radius: 30;" text="AÑADIR" />
+                  <Label layoutX="168.0" layoutY="478.0" text="PRE-REQUISITOS">
+                     <font>
+                        <Font name="MV Boli" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="98.0" layoutY="853.0" text="DISCUSIONES">
+                     <font>
+                        <Font name="MV Boli" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageLeader" fitHeight="63.0" fitWidth="56.0" layoutX="703.0" layoutY="240.0" onMousePressed="#showTableVIewLeader" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Leader%20.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="imageTimeTaker" fitHeight="55.0" fitWidth="66.0" layoutX="704.0" layoutY="328.0" onMousePressed="#showTableViewTimeTaker" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/TimerTaker.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="imageSecretary" fitHeight="65.0" fitWidth="59.0" layoutX="701.0" layoutY="411.0" onMousePressed="#showTableViewSecretary" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Secretary.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="1.0" layoutY="55.0" prefHeight="65.0" prefWidth="859.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="297.0" layoutY="10.0" text="NUEVA REUNIÓN">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="10.24" offsetY="2.0" radius="2.06" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

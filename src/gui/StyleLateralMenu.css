@@ -1,0 +1,5 @@
+.lateralMenuButton:hover {
+    -fx-background-color: WHITE;
+    -fx-border-color: BLACK;
+    -fx-text-fill: BLACK;
+}

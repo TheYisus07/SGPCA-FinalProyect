@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" prefHeight="705.0" prefWidth="170.0" style="-fx-background-color: #FFFFFF; -fx-border-color: BLACK; -fx-border-width: 1;" stylesheets="@StyleLateralMenu.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerAddBlueprint">
+   <children>
+      <AnchorPane prefHeight="55.0" prefWidth="515.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label layoutX="14.0" layoutY="12.0" text="SGP-CA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="218.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user%20.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelLoggedInUser" layoutX="263.0" layoutY="9.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelLoggedInUserEmail" layoutX="263.0" layoutY="28.0" prefHeight="20.0" prefWidth="237.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="55.0" prefHeight="55.0" prefWidth="514.0" style="-fx-background-color: white;" text="NUEVO ANTEPROYECTO">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+         <effect>
+            <DropShadow height="9.52" offsetY="2.0" radius="1.88" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <AnchorPane layoutX="22.0" layoutY="131.0" prefHeight="496.0" prefWidth="471.0" style="-fx-background-color: #F2F2FD; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="19.04" offsetY="2.0" radius="4.26" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <JFXTextField fx:id="textFieldAddBlueprintCodirectors" layoutX="180.0" layoutY="183.0" prefHeight="26.0" prefWidth="270.0" />
+            <JFXDatePicker fx:id="datePickerAddBlueprintStartDate" disable="true" layoutX="180.0" layoutY="68.0" prefWidth="270.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXDatePicker>
+            <Label layoutX="64.0" layoutY="131.0" text="LGAC asociadas:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldAddBlueprintTitle" layoutX="180.0" layoutY="13.0" prefHeight="26.0" prefWidth="270.0" />
+            <JFXTextField fx:id="textFieldAddBlueprintLgac" layoutX="180.0" layoutY="128.0" prefHeight="26.0" prefWidth="270.0" />
+            <JFXTextArea fx:id="textAreaAddBlueprintDescription" layoutX="181.0" layoutY="418.0" prefHeight="55.0" prefWidth="270.0" />
+            <Label layoutX="88.0" layoutY="419.0" text="Descripción:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="186.0" text="Coodirectores:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="72.0" text="Fecha de inicio:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="16.0" text="Titulo de anteproyecto:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldAddBlueprintStudent" layoutX="181.0" layoutY="238.0" prefHeight="26.0" prefWidth="270.0" />
+            <Label layoutX="96.0" layoutY="242.0" text="Estudiante:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="textFieldAddBlueprintModality" layoutX="179.0" layoutY="296.0" prefHeight="26.0" prefWidth="270.0" />
+            <Label layoutX="94.0" layoutY="300.0" text="Modalidad:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="119.0" layoutY="357.0" text="Estado:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="comboBoxAddBlueprintStatus" layoutX="175.0" layoutY="354.0" prefHeight="26.0" prefWidth="270.0" />
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="buttonAddBlueprintSave" layoutX="278.0" layoutY="649.0" onAction="#addNewBlueprint" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="GUARDAR">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="buttonAddBlueprintExit" layoutX="402.0" layoutY="649.0" onAction="#showGuiExitAddProject" prefHeight="30.0" prefWidth="89.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="SALIR">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXComboBox fx:id="comboBoxBlueprintProject" layoutX="22.0" layoutY="652.0" prefHeight="26.0" prefWidth="180.0" promptText="Proyecto Relacionado" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="696.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 1; -fx-border-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerObjective">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="30.0" prefWidth="693.0" style="-fx-background-color: white; -fx-background-radius: 10,10,0,0; -fx-border-color: 10,10,0,0;">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" text="Titulo del objetivo:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelObjectiveTitle" layoutX="146.0" layoutY="7.0" prefHeight="18.0" prefWidth="534.0" />
+         </children>
+         <effect>
+            <DropShadow height="19.04" offsetY="2.0" radius="4.26" spread="0.52" width="0.0">
+               <color>
+                  <Color red="0.7921568751335144" green="0.9058823585510254" blue="0.9176470637321472" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+      <TableView fx:id="tableViewObjectiveSelected" editable="true" layoutX="19.0" layoutY="213.0" prefHeight="154.0" prefWidth="658.0" styleClass="table-View" stylesheets="@StyleTableView.css" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="tableColumnObjectiveNumber" minWidth="-1.0" prefWidth="59.19997978210449" sortType="DESCENDING" text="No." />
+          <TableColumn fx:id="tableColumnObjectiveStrategy" minWidth="-1.0" prefWidth="152.79996490478516" text="Estrategia" />
+            <TableColumn fx:id="tableColumnObjectiveGoal" minWidth="-1.0" prefWidth="149.60003662109375" text="Meta" />
+            <TableColumn fx:id="tableColumnObjectiveAction" editable="false" minWidth="-1.0" prefWidth="141.60000610351562" sortable="false" text="Acción" />
+            <TableColumn fx:id="tableColumnObjectiveResult" minWidth="-1.0" prefWidth="130.39996337890625" text="Resultado" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="1.0" layoutY="30.0" prefHeight="126.0" prefWidth="695.0">
+         <children>
+            <Label layoutX="16.0" layoutY="7.0" text="Descripción:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="textAreaObjectiveDescription" editable="false" focusColor="#ffffff00" layoutX="18.0" layoutY="34.0" prefHeight="108.0" prefWidth="658.0" style="-fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10; -fx-focus-traversable: false;" unFocusColor="#ffffff00" wrapText="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow height="10.54" offsetX="1.0" offsetY="3.0" radius="5.885" width="15.0">
+                     <color>
+                        <Color red="0.7529411911964417" green="0.7529411911964417" blue="0.7529411911964417" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </JFXTextArea>
+         </children>
+      </AnchorPane>
+      <Label layoutX="19.0" layoutY="182.0" text="Estrategias">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="buttonCloseWindow" layoutX="594.0" layoutY="390.0" onAction="#closeWindowObjective" prefHeight="30.0" prefWidth="82.0" ripplerFill="#4343a7" styleClass="Button" stylesheets="@StyleButton.css" text="CERRAR">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="255.0" radius="127.0" width="255.0" />
+   </effect>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
